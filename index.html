@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#e8efe9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Draft" />
+    <meta name="description" content="Elige una palabra al azar con elegancia." />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Draft</title>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="brand">
+        <h1 class="brand__name">Draft</h1>
+        <p class="brand__tag">Una palabra. Al azar.</p>
+      </header>
+
+      <section class="compose" aria-label="Agregar palabras">
+        <form class="compose__form" id="add-form">
+          <label class="sr-only" for="word-input">Nueva palabra</label>
+          <input
+            id="word-input"
+            class="compose__input"
+            type="text"
+            autocomplete="off"
+            enterkeyhint="done"
+            maxlength="48"
+            placeholder="Escribe una palabra"
+          />
+          <button class="compose__add" type="submit" aria-label="Agregar">
+            <span aria-hidden="true">+</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="pool" aria-label="Palabras">
+        <div class="pool__meta">
+          <span id="count-label">0 palabras</span>
+          <button type="button" class="pool__clear" id="clear-btn" hidden>
+            Limpiar
+          </button>
+        </div>
+        <ul class="pool__list" id="word-list"></ul>
+        <p class="pool__empty" id="empty-state">
+          Agrega palabras para empezar el sorteo.
+        </p>
+      </section>
+
+      <section class="stage" aria-live="polite">
+        <p class="stage__label" id="stage-label">Listo para elegir</p>
+        <p class="stage__word" id="stage-word">—</p>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="draft-btn" id="draft-btn" disabled>
+          <span class="draft-btn__text">Draft</span>
+        </button>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
