@@ -1,7 +1,7 @@
 {
   "name": "Draft",
   "short_name": "Draft",
-  "description": "Elige una palabra al azar con elegancia.",
+  "description": "Elige una palabra al azar.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#e8efe9",
